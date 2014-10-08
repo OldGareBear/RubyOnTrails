@@ -4,6 +4,8 @@ module Phase6
   class ControllerBase < Phase5::ControllerBase
     # use this with the router to call action_name (:index, :show, :create...)
     def invoke_action(name)
+      self.send(name)
+      self.render(name.to_sym) unless self.already_built_response?
     end
   end
 end
