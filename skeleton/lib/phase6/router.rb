@@ -15,7 +15,6 @@ module Phase6
       !!(pattern =~ req.path)
     end
 
-    # use pattern to pull out route params (save for later?)
     # instantiate controller and call controller action
     def run(req, res)
       path_data = @pattern.match(req.path)
